@@ -1,0 +1,15 @@
+@using WF.CustomEvents
+
+<div @onstringpaste="HandlePaste">
+    Paste here!
+</div>
+
+@code {
+    [Parameter] 
+    public EventCallback<PasteEventArgs> OnPaste { get; set; }
+
+    private async Task HandlePaste(PasteEventArgs e)
+    {
+        await OnPaste.InvokeAsync(e);
+    }
+}
