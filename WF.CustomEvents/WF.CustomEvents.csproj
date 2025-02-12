@@ -4,8 +4,21 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <LangVersion>12</LangVersion>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>1.0.0</Version>
+        <Title>WF.CustomElements</Title>
+        <Authors>WebFox</Authors>
+        <Description>Custom Blazor Events</Description>
+        <Copyright>WebFox 2025</Copyright>
+        <PackageReadmeFile>../README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/yejcob/WF.CustomElements</RepositoryUrl>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <PackageId>WF.CustomElements</PackageId>
+        <PackageTags>Blazor;Custom Elements;</PackageTags>
     </PropertyGroup>
-
 
     <ItemGroup>
         <SupportedPlatform Include="browser"/>
@@ -13,6 +26,16 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0"/>
+        <PackageReference Include="WF.MinifyBundler" Version="1.0.4.2" PrivateAssets="all" />
     </ItemGroup>
 
+    <ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Remove="compilerSettings.json"/>
+        <Content Remove="wwwroot/KeepMe.txt"/>
+    </ItemGroup>
+    
 </Project>
